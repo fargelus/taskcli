@@ -8,6 +8,11 @@ import (
 
 var commands = [...]string{"add", "list", "delete", "done"}
 
+type Task struct {
+	id   int
+	name string
+}
+
 func isValidCommand(cmd string) bool {
 	valid := false
 	for _, item := range commands {
@@ -54,5 +59,10 @@ func main() {
 	if !isCommandArgExpected(cmd, arg) {
 		fmt.Fprintf(os.Stderr, "Error: Unknown arg for command <%s>\n", cmd)
 		os.Exit(1)
+	}
+
+	if cmd == "add" {
+		task := Task{id: 1, name: arg}
+		fmt.Println("Task is", task)
 	}
 }
