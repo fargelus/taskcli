@@ -2,8 +2,8 @@ package main
 
 import (
     "fmt"
-	"os"
-	"regexp"
+    "os"
+    "regexp"
 )
 
 var commands = [...]string{"add", "list", "delete", "done"}
