@@ -1,9 +1,9 @@
 package main
 
 import (
-    "fmt"
-    "os"
-    "regexp"
+	"fmt"
+	"os"
+	"regexp"
 )
 
 var commands = [...]string{"add", "list", "delete", "done"}
@@ -40,7 +40,7 @@ func isCommandArgExpected(cmd string, arg string) bool {
 // go run main.go done 1
 // go run main.go delete 1
 
-func main() {	
+func main() {
 	cmd := os.Args[1]
 	if !isValidCommand(cmd) {
 		fmt.Fprintf(os.Stderr, "Error: Unknown command\n")
